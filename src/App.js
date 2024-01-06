@@ -4,17 +4,28 @@ import { AppBar, Toolbar, Typography, Container, Button } from "@mui/material";
 import PostList from "./components/PostList";
 import PostDetail from "./components/PostDetail";
 import WordPressPostList from "./components/WordPressPostList";
+import "./App.css";
 
 function App() {
   return (
     <Router>
       <div>
-        <AppBar position="static">
+        <AppBar
+          className="app-bar"
+          position="static"
+          style={{
+            marginBottom: "16px",
+            background: "rgba(0,0,0,.1)",
+            backdropFilter: "blur(5px)",
+            boxShadow: "none",
+            border: "none",
+          }}
+        >
           <Toolbar>
-            <Typography variant="h6">Mi Aplicación</Typography>
+            <Typography variant="h6">Prueba técnica</Typography>
             <div style={{ marginLeft: "auto" }}>
               <Button color="inherit" component={Link} to="/">
-                JSONplacerholder
+                JSONph
               </Button>
               <Button color="inherit" component={Link} to="/wordpress">
                 WordPress

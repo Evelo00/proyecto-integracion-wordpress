@@ -47,7 +47,11 @@ const PostList = () => {
 
   return (
     <Container>
-      <Typography variant="h4" style={{ marginTop: "10px" }} gutterBottom>
+      <Typography
+        variant="h4"
+        style={{ marginTop: "5px", textAlign: "center", color: "white" }}
+        gutterBottom
+      >
         Posts
       </Typography>
 
@@ -57,6 +61,10 @@ const PostList = () => {
             <Card
               variant="outlined"
               style={{
+                borderRadius: "25px",
+                padding: "5px",
+                background: "rgba(0,0,0,.1)",
+                backdropFilter: "blur(100px)",
                 height: "250px",
                 display: "flex",
                 flexDirection: "column",
@@ -66,13 +74,22 @@ const PostList = () => {
               <CardContent>
                 <Link
                   to={`/posts/${post.id}`}
-                  style={{ textDecoration: "none" }}
+                  style={{
+                    textDecoration: "none",
+                  }}
                 >
-                  <Typography variant="h6" component="div">
+                  <Typography
+                    variant="subtitle1"
+                    style={{
+                      textAlign: "center",
+                      marginBottom: "16px",
+                      color: "#D4D7E1",
+                    }}
+                  >
                     {post.title}
                   </Typography>
                 </Link>
-                <Typography variant="body2" color="textSecondary" component="p">
+                <Typography variant="body2" color="#EEEFF5" component="p">
                   {post.body}
                 </Typography>
               </CardContent>
@@ -84,9 +101,18 @@ const PostList = () => {
         count={Math.ceil(posts.length / postsPerPage)}
         page={page}
         onChange={handlePageChange}
-        color="primary"
         size="large"
-        style={{ margin: "10px" }}
+        color="secondary"
+        style={{
+          margin: "10px",
+          display: "flex",
+          background: "rgba(0,0,0,.1)",
+          borderRadius: "25px",
+          backdropFilter: "blur(5px)",
+          height: "100%",
+          width: "auto",
+          justifyContent: "center",
+        }}
       />
     </Container>
   );
