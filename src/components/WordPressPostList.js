@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Typography } from "@mui/material";
 import axios from "axios";
 
 const WordPressPostList = () => {
@@ -21,7 +22,13 @@ const WordPressPostList = () => {
 
   return (
     <div>
-      <h2>WordPress Post List</h2>
+      <Typography
+        variant="h4"
+        style={{ marginTop: "5px", textAlign: "center", color: "white" }}
+        gutterBottom
+      >
+        WordPress Post List
+      </Typography>
       <ul>
         {posts.map((post) => (
           <li key={post.id}>
